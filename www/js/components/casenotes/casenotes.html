@@ -1,0 +1,24 @@
+<div class="row table-responsive">
+<table width="100%" class="table table-bordered">
+  <thead>
+    <th>Previous Date</th>
+    <th>Court Name</th>
+    <th>Court Number</th>
+<!--     <th colspan="2">Name of Party</th> -->
+    <th>Case Stage</th>
+    <th>Next Date</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="data in data">
+      <td>{{data.previous_date}}</td>
+      <td>{{data.court_name}}</td>
+      <td>{{data.court_no}}</td>  
+<!--       <td>{{data.name_of_party1}}</td>
+      <td>{{data.name_of_party2}}</td> -->
+      <td>{{data.case_stage}}</td>
+      <td>{{data.next_date}}</td>
+      
+    </tr>
+  </tbody>
+</table>
+</div>

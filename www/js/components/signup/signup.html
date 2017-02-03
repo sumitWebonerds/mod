@@ -1,0 +1,53 @@
+<form  name="signupFrm" ng-submit="signup(signupFrm)" novalidate> 
+<div ng-show="!isEmpty(msg)">
+  <div class="padding">
+    <ul class="error">
+      <li>{{msg.email[0]}}</li>
+      <li>{{msg.phone[0]}}</li>
+    </ul>
+  </div>
+</div>
+<div class="list">
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Full Name</span>
+    <input type="text" placeholder="Full Name" name="name" ng-model="user.name" required>
+    <span ng-if="signupFrm.$submitted || signupFrm.name.$touched">
+        <span class="error" ng-if="signupFrm.name.$error.required">
+        Please Enter Your Full Name
+        </span>
+    </span>
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Email Address</span>
+    <input type="email" placeholder="Email Address" name="email" ng-model="user.email" required>
+    <span ng-if="signupFrm.$submitted || signupFrm.email.$touched">
+        <span class="error" ng-if="signupFrm.email.$error.required">
+        Please Enter Your Email Address
+        </span>
+        <span class="error" ng-show="signupFrm.email.$error.email">Invalid email address.</span>   
+    </span>
+  </label>
+    <label class="item item-input item-floating-label">
+    <span class="input-label">Contact Number</span>
+    <input type="number" placeholder="Contact Number" name="contact" ng-model="user.contact" required>
+    <span ng-if="signupFrm.$submitted || signupFrm.contact.$touched">
+        <span class="error" ng-if="signupFrm.contact.$error.required">
+        Please Enter Your Mobile Number
+        </span>
+        <span class="error" ng-show="signupFrm.contact.$error.number">Invalid Mobile It must be Integer.</span>   
+    </span>
+  </label>
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Password" name="password" ng-model="user.password" required>
+    <span ng-if="signupFrm.$submitted || signupFrm.password.$touched">
+        <span class="error" ng-if="signupFrm.password.$error.required">
+        Please Enter Your Password
+        </span>
+    </span>
+  </label>
+  <button type="submit" id="signup-button1" class="button button-block button-positive">
+  Signup
+</button>
+</div>
+</form>

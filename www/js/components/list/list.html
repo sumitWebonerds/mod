@@ -1,0 +1,23 @@
+<ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="item in data" item="item" href="#/item/{{item.id}}" class="item-remove-animate item-avatar">
+      	<img ng-src="img/justice.png">
+          <h2>{{item.name_of_party1}} vs {{item.name_of_party2}}</h2>
+	      <p>Court Name : {{item.court_name}}</p>
+          <p>Court Stage : {{item.case_stage}}</p>
+          <ion-option-button class="button-assertive"
+                             ng-click="critical(item)">
+            Critical
+          </ion-option-button>
+          <ion-option-button class="button-energized"
+                             ng-click="normal(item)">
+            Normal
+          </ion-option-button>
+          <ion-option-button class="button-royal"
+                             ng-click="ok(item)">
+            Ok
+          </ion-option-button>
+        
+        </ion-item>
+
+</ion-list>

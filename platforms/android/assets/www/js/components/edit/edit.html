@@ -1,0 +1,35 @@
+<div class="list">
+    <label class="item ">
+    <span class="input-label">Previous Date</span>
+     <input type="text" ion-datetime-picker date ng-model="dateValue" placeholder="Click Here" value="">
+  	{{dateValue| date: 'yyyy-MM-dd'}}
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Court Name</span>
+    <input type="text" placeholder="Last Name">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Case Number</span>
+    <input type="text" placeholder="Case Number">
+  </label>
+    <label class="item item-input item-floating-label">
+    <span class="input-label">First Party Name</span>
+    <input type="text" placeholder="First Party Name">
+  </label>
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Second Party Name</span>
+    <input type="text" placeholder="Second Party Name">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Case Stage</span>
+    <input type="text" placeholder="Case Stage">
+  </label>
+  <label class="item">
+    <span class="input-label">Next Date</span>
+    <input type="text" ion-datetime-picker date ng-model="date" placeholder="Click Here" value="">
+  	{{date| date: 'yyyy-MM-dd'}}
+  </label>
+  <button class="button button-block button-positive">
+  Save
+</button>
+</div>

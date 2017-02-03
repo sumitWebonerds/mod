@@ -1,0 +1,41 @@
+<form  name="resetFrm" ng-submit="reset(resetFrm)" novalidate> 
+<div ng-show="!isEmpty(msg)">
+  <div class="padding">
+    <div class="error text-center">
+      {{msg}}
+    </div>
+  </div>
+</div>
+<div class="list">
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Old Password</span>
+    <input type="password" placeholder="Old Password" name="opassword" ng-model="user.opassword" required>
+    <span ng-if="resetFrm.$submitted || resetFrm.password.$touched">
+        <span class="error" ng-if="resetFrm.opassword.$error.required">
+        Please Enter Your Password
+        </span>
+    </span>
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">New Password</span>
+    <input type="password" placeholder="New Password" name="npassword" ng-model="user.npassword" required>
+    <span ng-if="resetFrm.$submitted || resetFrm.npassword.$touched">
+        <span class="error" ng-if="resetFrm.npassword.$error.required">
+        Please Enter Your Password
+        </span>
+    </span>
+  </label>
+    <label class="item item-input item-floating-label">
+    <span class="input-label">Confirm Password</span>
+    <input type="password" placeholder="Confirm Password" name="cpassword" ng-model="user.cpassword" required>
+    <span ng-if="resetFrm.$submitted || resetFrm.password.$touched">
+        <span class="error" ng-if="resetFrm.cpassword.$error.required">
+        Please Enter Your Password
+        </span>
+    </span>
+  </label>
+  <button type="submit" id="signup-button1" class="button button-block button-positive">
+ Reset
+</button>
+</div>
+</form>
