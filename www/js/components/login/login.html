@@ -1,6 +1,13 @@
-<div ng-show="!isEmpty(msg)">
+<div ng-show=isEmpty(msg.password[0])>
+  <div ng-show="!isEmpty(msg)">
+    <div class="padding error">
+       {{msg}} 
+    </div>
+  </div>
+</div>
+<div ng-show="!isEmpty(msg.password)">
   <div class="padding error">
-     {{msg}} 
+     {{msg.password[0]}} 
   </div>
 </div>
 <form  name="loginFrm" ng-submit="login(loginFrm)" novalidate> 

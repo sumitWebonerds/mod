@@ -2,17 +2,19 @@
 <div ng-show="!isEmpty(msg)">
   <div class="padding">
     <ul class="error">
+      <li>{{msg}}</li>
       <li>{{msg.email[0]}}</li>
       <li>{{msg.phone[0]}}</li>
+       <li>{{msg.password[0]}}</li>
     </ul>
   </div>
 </div>
 <div class="list">
   <label class="item item-input item-floating-label">
     <span class="input-label">Full Name</span>
-    <input type="text" placeholder="Full Name" name="name" ng-model="user.name" required>
-    <span ng-if="signupFrm.$submitted || signupFrm.name.$touched">
-        <span class="error" ng-if="signupFrm.name.$error.required">
+    <input type="text" placeholder="Full Name" name="first_name" ng-model="user.first_name" required>
+    <span ng-if="signupFrm.$submitted || signupFrm.first_name.$touched">
+        <span class="error" ng-if="signupFrm.first_name.$error.required">
         Please Enter Your Full Name
         </span>
     </span>
@@ -29,12 +31,12 @@
   </label>
     <label class="item item-input item-floating-label">
     <span class="input-label">Contact Number</span>
-    <input type="number" placeholder="Contact Number" name="contact" ng-model="user.contact" required>
-    <span ng-if="signupFrm.$submitted || signupFrm.contact.$touched">
-        <span class="error" ng-if="signupFrm.contact.$error.required">
+    <input type="number" placeholder="Contact Number" name="phone" ng-model="user.phone" required>
+    <span ng-if="signupFrm.$submitted || signupFrm.phone.$touched">
+        <span class="error" ng-if="signupFrm.phone.$error.required">
         Please Enter Your Mobile Number
         </span>
-        <span class="error" ng-show="signupFrm.contact.$error.number">Invalid Mobile It must be Integer.</span>   
+        <span class="error" ng-show="signupFrm.phone.$error.number">Invalid Mobile It must be Integer.</span>   
     </span>
   </label>
    <label class="item item-input item-floating-label">

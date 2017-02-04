@@ -9,7 +9,7 @@ var app =angular.module('starter', ['ionic','starter.controllers', 'ngCordova',"
 .run(function($ionicPlatform, $rootScope, $state, sessionService, $location,$ionicPopup) {
   $rootScope.$on('$stateChangeStart',
             function(event, toState, toParams, fromState, fromParams) {
-                // do something
+                //do something
                 if (toState.accessRule == "@") {
                     var currentUser = {};
 
@@ -20,7 +20,6 @@ var app =angular.module('starter', ['ionic','starter.controllers', 'ngCordova',"
                         $location.path("app/login")
                         $state.go('app.login');
                     }
-
                 }     
             })
 
@@ -43,8 +42,8 @@ var app =angular.module('starter', ['ionic','starter.controllers', 'ngCordova',"
            API_BASE:"http://localhost/myoffice/myofficediary/public_html/index.php?r=",
            IMG_BASE:"http://localhost/myoffice/myofficediary/public_html/images/",
 
-        //API_BASE: "http://www.smartnarayangaon.com/index.php?r=",
-        //IMG_BASE: "http://www.smartnarayangaon.com/images/",
+        // API_BASE: "http://www.myofficediary.org/index.php?r=",
+        // IMG_BASE: "http://www.myofficediary.org/images/",
     })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -128,6 +127,15 @@ var app =angular.module('starter', ['ionic','starter.controllers', 'ngCordova',"
       views: {
         'menuContent': {
           templateUrl: 'templates/list.html'
+        }
+      }
+    })
+    .state('app.detail', {
+      url: '/detail/:id',
+      accessRule: "@",
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/detail.html'
         }
       }
     })

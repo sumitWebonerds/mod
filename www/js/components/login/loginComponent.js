@@ -1,6 +1,6 @@
 app.component("login", {
     templateUrl: "js/components/login/login.html",
-    controller: function($scope, $state, LoginService,sessionService,$ionicPopup) {
+    controller: function($scope, $state, LoginService,$ionicHistory,sessionService,$ionicPopup) {
       $scope.title = $state.name;
       $scope.user = {};
       $scope.msg = [];
@@ -23,20 +23,19 @@ app.component("login", {
                     function(res) {
                      if(res.data.status=='fail'){
 
-                      $scope.msg=res.data.message;                      
+                      $scope.msg=res.data.errors;                      
                      
                      }else{
 
-                        sessionService.set("moduser",res.data.data);
-                        var alertPopup = $ionicPopup.alert({
-                             title: 'Success',
-                             template: res.data.message,
-                           });
-
-                             alertPopup.then(function(res) {
+                        sessionService.set("moduser",res.data.user);
                         
+
+                             //alertPopup.then(function(res) {
+                              $ionicHistory.nextViewOptions({
+                                disableBack: true
+                              });
                                $state.go('app.list'); 
-                            });
+                            //});
                          console.log(res.data);   
                      
                      } 

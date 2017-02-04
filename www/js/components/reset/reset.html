@@ -1,35 +1,44 @@
-<form  name="resetFrm" ng-submit="reset(resetFrm)" novalidate> 
-<div ng-show="!isEmpty(msg)">
+<div ng-show="!isEmpty(failmsg)">
   <div class="padding">
     <div class="error text-center">
-      {{msg}}
+      {{failmsg}}
     </div>
   </div>
 </div>
+<div ng-show="!isEmpty(successmsg)">
+  <div class="padding">
+    <div class="success text-center">
+      {{successmsg}}
+    </div>
+  </div>
+</div>
+ 
+<form  name="resetFrm" ng-submit="reset(resetFrm)" novalidate> 
+
 <div class="list">
    <label class="item item-input item-floating-label">
     <span class="input-label">Old Password</span>
-    <input type="password" placeholder="Old Password" name="opassword" ng-model="user.opassword" required>
-    <span ng-if="resetFrm.$submitted || resetFrm.password.$touched">
-        <span class="error" ng-if="resetFrm.opassword.$error.required">
+    <input type="password" placeholder="Old Password" name="old_password" ng-model="user.old_password" required>
+    <span ng-if="resetFrm.$submitted || resetFrm.old_password.$touched">
+        <span class="error" ng-if="resetFrm.old_password.$error.required">
         Please Enter Your Password
         </span>
     </span>
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">New Password</span>
-    <input type="password" placeholder="New Password" name="npassword" ng-model="user.npassword" required>
-    <span ng-if="resetFrm.$submitted || resetFrm.npassword.$touched">
-        <span class="error" ng-if="resetFrm.npassword.$error.required">
+    <input type="password" placeholder="New Password" name="new_password" ng-model="user.new_password" required>
+    <span ng-if="resetFrm.$submitted || resetFrm.new_password.$touched">
+        <span class="error" ng-if="resetFrm.new_password.$error.required">
         Please Enter Your Password
         </span>
     </span>
   </label>
     <label class="item item-input item-floating-label">
     <span class="input-label">Confirm Password</span>
-    <input type="password" placeholder="Confirm Password" name="cpassword" ng-model="user.cpassword" required>
-    <span ng-if="resetFrm.$submitted || resetFrm.password.$touched">
-        <span class="error" ng-if="resetFrm.cpassword.$error.required">
+    <input type="password" placeholder="Confirm Password" name="repeat_password" ng-model="user.repeat_password" required>
+    <span ng-if="resetFrm.$submitted || resetFrm.repeat_password.$touched">
+        <span class="error" ng-if="resetFrm.repeat_password.$error.required">
         Please Enter Your Password
         </span>
     </span>

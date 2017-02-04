@@ -4,6 +4,14 @@ app.component("forgot", {
       $scope.title = $state.name;
       $scope.user = {};
       $scope.msg = [];
+
+
+      $scope.isEmpty = function(obj) {
+            for (var i in obj)
+                if (obj.hasOwnProperty(i)) return false;
+            return true;
+        };
+
       $scope.forgot = function(frm) {
            
             // If Form Valid 
@@ -11,7 +19,15 @@ app.component("forgot", {
              ForgotPasswordService.forgot($scope.user).then(
                     function(res) {
 
-                     console.log(res.data); 
+                     if(res.data.status=='fail'){
+
+                      $scope.msg = res.data.msg;
+
+                     }else{
+                      $scope.msg = res.data.msg;
+//                      res.data.msg = $scope.msg; 
+
+                     }
             })
         }; // forgot password END 
       }

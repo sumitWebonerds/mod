@@ -24,7 +24,7 @@ app.component("signup", {
                       }else{
                         var alertPopup = $ionicPopup.alert({
                            title: 'Verify Email',
-                           template: res.data.data
+                           template: res.data.msg
                          });
 
                            alertPopup.then(function(res) {

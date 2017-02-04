@@ -5,6 +5,9 @@ body {
 .error{
     color: red;
 }
+.success{
+    color: green;
+}
 .wrap{
     margin-top: 70px;
 }

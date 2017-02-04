@@ -4,47 +4,10 @@ app.component("list", {
 
     controller: function($scope,$ionicListDelegate,ListService,sessionService) {
     
-        $scope.data = [
-          {
-            previous_date:"31-01-2017",
-            court_name:"ABC",
-            court_no:"CC/12/333",
-            name_of_party1:"XYZ",
-            name_of_party2:"PQR",
-            case_stage:"qweerrr",
-            next_date:"02-02-2017",
-          },
-          {
-            previous_date:"31-01-2017",
-            court_name:"ABC",
-            court_no:"CC/12/333",
-            name_of_party1:"XYZ",
-            name_of_party2:"PQR",
-            case_stage:"qweerrr",
-            next_date:"02-02-2017",
-          }, 
-          {
-            previous_date:"31-01-2017",
-            court_name:"ABC",
-            court_no:"CC/12/333",
-            name_of_party1:"XYZ",
-            name_of_party2:"PQR",
-            case_stage:"qweerrr",
-            next_date:"02-02-2017",
-          },
-           {
-            previous_date:"31-01-2017",
-            court_name:"ABC",
-            court_no:"CC/12/333",
-            name_of_party1:"XYZ",
-            name_of_party2:"PQR",
-            case_stage:"qweerrr",
-            next_date:"02-02-2017",
-          }
-        ];
+        $scope.data = [];
 
-        $scope.critical = function(item) {
-        
+        $scope.update = function(item) {
+          console.log(item);
           $ionicListDelegate.closeOptionButtons();  // this closes swipe option buttons after alert
         
         };
@@ -58,12 +21,17 @@ app.component("list", {
           $ionicListDelegate.closeOptionButtons();  // this closes swipe option buttons after alert
 
         };
-          var currentUser= {};
+         var currentUser= {};
          currentUser = sessionService.get("moduser");
-         //console.log(currentUser.authKey);
-         ListService.list(currentUser.authKey).then(
+        // console.log(currentUser.authKey);
+         ListService.list({Authorization:currentUser.authKey}).then(
                     function(res) {
+                     console.log(res.data);
+                     if(res.data.status=='fail'){
 
+                     }else{
+                     $scope.data = res.data.CaseNotes;
+                     }
 
         })
     }

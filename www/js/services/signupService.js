@@ -6,7 +6,7 @@ app.service("SignupService",function($http,API_BASE){
 					method:"post",
 					url:API_BASE.toString()+"api/user/register",
 					data:params, 
-            		
+            		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 				});
 			}
 

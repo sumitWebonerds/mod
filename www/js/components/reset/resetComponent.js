@@ -1,10 +1,10 @@
 app.component("reset", {
     templateUrl: "js/components/reset/reset.html",
-    controller: function($scope, $state,ResetPasswordService,$ionicPopup) {
+    controller: function($scope, $state,ResetPasswordService,$ionicPopup,sessionService) {
       $scope.title = $state.name;
       $scope.user = {};
-      $scope.msg = [];
-
+      $scope.successmsg = [];
+      $scope.failmsg = [];
 
       $scope.isEmpty = function(obj) {
             for (var i in obj)
@@ -15,15 +15,24 @@ app.component("reset", {
            
             // If Form Valid 
         if (frm.$valid) {
-             ResetPasswordService.reset($scope.user).then(
+         var currentUser= {};
+         currentUser = sessionService.get("moduser");
+        
+             ResetPasswordService.reset({Authorization:currentUser.authKey,data:$scope.user}).then(
                     function(res) {
 
                      console.log(res.data); 
                      if(res.data.status=='fail'){
-                      $scope.msg=res.data.data;
+
+                      $scope.failmsg = res.data.msg;
+                     
                      }else{
-                      $scope.msg=res.data.data;
+
+                      $scope.successmsg = res.data.msg;
+                     
                      }
+                     
+                    
             })
         }; // forgot password END 
       }

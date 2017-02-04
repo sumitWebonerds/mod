@@ -1,3 +1,10 @@
+<div ng-show="!isEmpty(msg)">
+  <div class="padding">
+    <div class="error text-center">
+      {{msg}}
+    </div>
+  </div>
+</div>
 <form  name="forgotFrm" ng-submit="forgot(forgotFrm)" novalidate> 
 <div class="list">
   <label class="item item-input item-floating-label">
