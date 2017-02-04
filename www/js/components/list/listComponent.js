@@ -2,7 +2,7 @@ app.component("list", {
 
     templateUrl: "js/components/list/list.html",
 
-    controller: function($scope,$ionicListDelegate) {
+    controller: function($scope,$ionicListDelegate,ListService,sessionService) {
     
         $scope.data = [
           {
@@ -58,5 +58,13 @@ app.component("list", {
           $ionicListDelegate.closeOptionButtons();  // this closes swipe option buttons after alert
 
         };
+          var currentUser= {};
+         currentUser = sessionService.get("moduser");
+         //console.log(currentUser.authKey);
+         ListService.list(currentUser.authKey).then(
+                    function(res) {
+
+
+        })
     }
 });
