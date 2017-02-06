@@ -1,35 +1,43 @@
+<form  name="loginFrm" ng-submit="login(loginFrm)" novalidate> 
 <div class="list">
-    <label class="item ">
+    
+  <label class="item item-input item-floating-label">
     <span class="input-label">Previous Date</span>
-     <input type="text" ion-datetime-picker date ng-model="dateValue" placeholder="Click Here" value="">
-  	{{dateValue| date: 'yyyy-MM-dd'}}
+    <input type="text" placeholder="Case Stage" ng-model="data.prev_date" ng-click="openDatePicker1()">    
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Court Name</span>
-    <input type="text" placeholder="Last Name">
+    <input type="text" placeholder="Last Name" ng-model="data.court_name">
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Case Number</span>
-    <input type="text" placeholder="Case Number">
+    <input type="text" placeholder="Case Number"  ng-model="data.case_number">
   </label>
     <label class="item item-input item-floating-label">
     <span class="input-label">First Party Name</span>
-    <input type="text" placeholder="First Party Name">
+    <input type="text" placeholder="First Party Name" ng-model="data.first_party_name">
   </label>
    <label class="item item-input item-floating-label">
     <span class="input-label">Second Party Name</span>
-    <input type="text" placeholder="Second Party Name">
+    <input type="text" placeholder="Second Party Name" ng-model="data.second_party_name">
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Case Stage</span>
-    <input type="text" placeholder="Case Stage">
+    <input type="text" placeholder="Case Stage" ng-model="data.case_stage">
   </label>
-  <label class="item">
+  <!-- <label class="item">
     <span class="input-label">Next Date</span>
-    <input type="text" ion-datetime-picker date ng-model="date" placeholder="Click Here" value="">
-  	{{date| date: 'yyyy-MM-dd'}}
+    <input type="text" ion-datetime-picker ng-model="data.next_date" placeholder="Click Here" value="">
+  	{{data.next_date | date: 'yyyy-MM-dd'}}
+  </label> -->
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Next Date</span>
+    <input type="text" placeholder="Case Stage" ng-model="data.next_date" ng-click="openDatePicker2()">
+
   </label>
+
   <button class="button button-block button-positive">
   Save
 </button>
 </div>
+</form>

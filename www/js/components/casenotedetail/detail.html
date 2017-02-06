@@ -1,0 +1,22 @@
+<div class="list card">
+  <div class="item item-avatar">
+   <img ng-src="img/justice.png">
+    <h2>{{details.first_party_name}} Vs {{details.second_party_name}}</h2>
+    <p>Case Number : {{details.case_number}}</p>
+  </div>
+
+  <div class="item item-body">
+   
+    <p>
+    	<p>Court Name : {{details.court_name}}</p>
+    	<p>Case Stage : {{details.case_stage}}</p>
+   		<p>Previous Date : {{details.prev_date}}</p>
+    	<p>Next Date : {{details.next_date}}</p>
+    </p>
+    <p>
+      <a href="#/app/edit/{{details.id}}" class="button button-block button-positive">Update</a>
+      
+    </p>
+  </div>
+
+</div>

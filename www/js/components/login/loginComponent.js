@@ -15,7 +15,7 @@ app.component("login", {
 
 
       $scope.login = function(frm) {
-           console.log($scope.user); 
+    //       console.log($scope.user); 
             // If Form Valid 
         if (frm.$valid) {
 

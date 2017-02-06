@@ -12,8 +12,9 @@ app.component("logout", {
           confirmPopup.then(function(res) {
                if(res) {
 
-                   sessionService.destroy("moduser");
-
+                 sessionService.destroy("moduser");               
+                 $state.go('app.login'); 
+                 
                
                } else {
 

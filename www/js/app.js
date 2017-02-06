@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var app =angular.module('starter', ['ionic','starter.controllers', 'ngCordova',"ion-datetime-picker"])
+var app =angular.module('starter', ['ionic','starter.controllers', 'ngCordova','ionic-datepicker'])
 
 .run(function($ionicPlatform, $rootScope, $state, sessionService, $location,$ionicPopup) {
   $rootScope.$on('$stateChangeStart',
@@ -77,7 +77,7 @@ var app =angular.module('starter', ['ionic','starter.controllers', 'ngCordova',"
       }
     })
     .state('app.edit', {
-      url: '/edit',
+      url: '/edit/:id',
       accessRule: "@",
       views: {
         'menuContent': {
@@ -130,6 +130,15 @@ var app =angular.module('starter', ['ionic','starter.controllers', 'ngCordova',"
         }
       }
     })
+    .state('app.createnew', {
+      url: '/createnew',
+      accessRule: "@",
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/createnew.html'
+        }
+      }
+    })
     .state('app.detail', {
       url: '/detail/:id',
       accessRule: "@",
@@ -141,7 +150,7 @@ var app =angular.module('starter', ['ionic','starter.controllers', 'ngCordova',"
     })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/login');
+  $urlRouterProvider.otherwise('/app/list');
 });
 
 app.factory('sessionService', ['$http', function($http) {
