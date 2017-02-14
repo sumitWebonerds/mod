@@ -1,0 +1,43 @@
+<form  name="casenoteFrm" ng-submit="casenote(casenoteFrm)" novalidate> 
+<div class="list">
+    
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Previous Date</span>
+    <input type="text" placeholder="Previous Date" name="prev_date" ng-model="data.prev_date" ng-click="openDatePicker1()">    
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Court Name</span>
+    <input type="text" placeholder="Court Name" name="court_name" ng-model="data.court_name">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Case Number</span>
+    <input type="text" placeholder="Case Number" name="case_number" ng-model="data.case_number">
+  </label>
+    <label class="item item-input item-floating-label">
+    <span class="input-label">First Party Name</span>
+    <input type="text" placeholder="First Party Name" name="first_party_name" ng-model="data.first_party_name">
+  </label>
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Second Party Name</span>
+    <input type="text" placeholder="Second Party Name" name="second_party_name" ng-model="data.second_party_name">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Case Stage</span>
+    <input type="text" placeholder="Case Stage" name="case_stage" ng-model="data.case_stage">
+  </label>
+  <!-- <label class="item">
+    <span class="input-label">Next Date</span>
+    <input type="text" ion-datetime-picker ng-model="data.next_date" placeholder="Click Here" value="">
+  	{{data.next_date | date: 'yyyy-MM-dd'}}
+  </label> -->
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Next Date</span>
+    <input type="text" placeholder="Next Date" name="next_date" ng-model="data.next_date" ng-click="openDatePicker2()">
+
+  </label>
+
+  <button class="button button-block button-positive">
+  Create
+</button>
+</div>
+</form>

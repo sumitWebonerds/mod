@@ -1,0 +1,27 @@
+<div ng-show=!isEmpty(msg)>
+  <div class="text-center padding">
+    <h3 class="error">{{msg}}</h3>  
+  </div>
+</div>
+<div ng-show=isEmpty(msg)>
+  <div ng-show=!isEmpty(data)>
+    <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="search" ng-model="search">
+        </label>
+    <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+            <ion-item ng-repeat="item in data | filter:search" item="item" href="#/app/detail/{{item.id}}" class="item-remove-animate item-avatar">
+          	<img ng-src="img/justice.png">
+              <h2>{{item.first_party_name}} vs {{item.second_party_name}}</h2>
+    	      <p>Court Name : {{item.court_name}}</p>
+              <p>Court Stage : {{item.case_stage}}</p>
+              <ion-option-button class="utton button-block button-balanced ion-edit "
+                                 ng-click="update(item.id)">
+ Update
+              </ion-option-button> 
+              <ion-option-button class="button button-block button-royal ion-eye" ng-click="view(item.id)">View
+              </ion-option-button>               
+            </ion-item>
+    </ion-list>
+  </div>
+</div>
