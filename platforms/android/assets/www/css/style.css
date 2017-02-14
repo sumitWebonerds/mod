@@ -2,9 +2,22 @@
 body {
   cursor: url('http://ionicframework.com/img/finger.png'), auto;
 }
-
-
-
+.error{
+    color: red;
+}
+.success{
+    color: green;
+}
+.wrap{
+    margin-top: 70px;
+}
+.wrap-signup{
+    margin-top: 20px;   
+}
+.img{
+    margin: auto !important;
+    display: block;
+}
 .table-bordered {
     border: 1px solid #DDD;
 }
@@ -25,4 +38,9 @@ td,th{
 .table-responsive {
     min-height: 0.01%;
     overflow-x: auto;
+}
+.link-positive{
+
+    color:#0c60ee;
+    text-decoration: none;
 }

@@ -1,7 +1,7 @@
 app.component("caseNotes", {
     templateUrl: "js/components/casenotes/casenotes.html",
-    controller: function($scope) {
-    
+    controller: function($scope,$state) {
+        $scope.title = $state.name;
         $scope.data = [
           {
             previous_date:"31-01-2017",
