@@ -1,22 +1,29 @@
-<div ng-show="!isEmpty(msg)">
+<div class="padding">
   <div class="padding">
-    <div class="error text-center">
-      {{msg}}
-    </div>
+    <img ng-src="img/144.jpg" class="img">
   </div>
 </div>
-<form  name="forgotFrm" ng-submit="forgot(forgotFrm)" novalidate> 
-<div class="list">
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Email Address</span>
-    <input type="email" placeholder="Email Address" name="email" ng-model="user.email" required>
-    <span ng-if="forgotFrm.$submitted || forgotFrm.email.$touched">
-        <span class="error" ng-if="forgotFrm.email.$error.required">
-        Please Enter Your Email Address
-        </span>
-         <span class="error" ng-show="forgotFrm.email.$error.email">Invalid email address.</span>     
-    </span>
-  </label>
-  <button type="submit" id="signup-button1" class="button button-block button-positive">Send</button>
+<div class="padding">
+  <div ng-show="!isEmpty(msg)">
+    <div class="padding">
+      <div class="error text-center">
+        {{msg}}
+      </div>
+    </div>
+  </div>
+  <form  name="forgotFrm" ng-submit="forgot(forgotFrm)" novalidate> 
+  <div class="list">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Email Address</span>
+      <input type="email" placeholder="Email Address" name="email" ng-model="user.email" required>
+      <span ng-if="forgotFrm.$submitted || forgotFrm.email.$touched">
+          <span class="error" ng-if="forgotFrm.email.$error.required">
+          Please Enter Your Email Address
+          </span>
+           <span class="error" ng-show="forgotFrm.email.$error.email">Invalid email address.</span>     
+      </span>
+    </label>
+    <button type="submit" id="signup-button1" class="button button-block button-positive">Send</button>
+  </div>
+  </form>
 </div>
-</form>

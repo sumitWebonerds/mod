@@ -15,7 +15,10 @@
     </p>
     <p>
       <a href="#/app/edit/{{details.id}}" class="button button-block button-positive">Update</a>
-      
+                        <button class="button button-block button button-small button-assertive
+             icon ion-android-share-alt icon-right" ng-click="share(details.first_party_name,details.second_party_name,details.case_number,details.court_name,details.case_stage,details.prev_date,details.next_date)">
+            Share
+          </button>
     </p>
   </div>
 

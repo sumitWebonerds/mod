@@ -1,37 +1,44 @@
-<div ng-show=isEmpty(msg.password[0])>
-  <div ng-show="!isEmpty(msg)">
-    <div class="padding error">
-       {{msg}} 
+<div class="padding">
+    <div class="padding">
+     <img ng-src="img/144.jpg" class="img">
+     </div>
+</div>
+<div class="padding">
+  <div ng-show=isEmpty(msg.password[0])>
+    <div ng-show="!isEmpty(msg)">
+      <div class="padding error">
+         {{msg}} 
+      </div>
     </div>
   </div>
-</div>
-<div ng-show="!isEmpty(msg.password)">
-  <div class="padding error">
-     {{msg.password[0]}} 
+  <div ng-show="!isEmpty(msg.password)">
+    <div class="padding error">
+       {{msg.password[0]}} 
+    </div>
   </div>
+  <form  name="loginFrm" ng-submit="login(loginFrm)" novalidate> 
+  <div class="list">
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Username or Email Address</span>
+      <input type="text" placeholder="Usrname or Email Address" name="email" ng-model="user.username" required>
+      <span ng-if="loginFrm.$submitted || loginFrm.email.$touched">
+          <span class="error" ng-if="loginFrm.email.$error.required">
+          Please Enter Your Email or username
+          </span>  
+      </span>
+    </label>
+     <label class="item item-input item-floating-label">
+      <span class="input-label">Password</span>
+      <input type="password" placeholder="Password" name="password" ng-model="user.password" required>
+      <span ng-if="loginFrm.$submitted || loginFrm.password.$touched">
+          <span class="error" ng-if="loginFrm.password.$error.required">
+          Please Enter Your Password
+          </span>
+      </span>
+    </label>
+    <button type="submit" id="signup-button1" class="button button-block button-positive">
+    Login
+  </button>
+  </div>
+  </form>
 </div>
-<form  name="loginFrm" ng-submit="login(loginFrm)" novalidate> 
-<div class="list">
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Username or Email Address</span>
-    <input type="text" placeholder="Usrname or Email Address" name="email" ng-model="user.username" required>
-    <span ng-if="loginFrm.$submitted || loginFrm.email.$touched">
-        <span class="error" ng-if="loginFrm.email.$error.required">
-        Please Enter Your Email or username
-        </span>  
-    </span>
-  </label>
-   <label class="item item-input item-floating-label">
-    <span class="input-label">Password</span>
-    <input type="password" placeholder="Password" name="password" ng-model="user.password" required>
-    <span ng-if="loginFrm.$submitted || loginFrm.password.$touched">
-        <span class="error" ng-if="loginFrm.password.$error.required">
-        Please Enter Your Password
-        </span>
-    </span>
-  </label>
-  <button type="submit" id="signup-button1" class="button button-block button-positive">
-  Login
-</button>
-</div>
-</form>

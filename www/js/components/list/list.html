@@ -4,24 +4,36 @@
   </div>
 </div>
 <div ng-show=isEmpty(msg)>
-  <div ng-show=!isEmpty(data)>
+  <div ng-show=!isEmpty(data1)>
     <label class="item item-input">
-            <i class="icon ion-search placeholder-icon"></i>
-            <input type="search" placeholder="search" ng-model="search">
-        </label>
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="search" ng-model="search">
+    </label>
     <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
-            <ion-item ng-repeat="item in data | filter:search" item="item" href="#/app/detail/{{item.id}}" class="item-remove-animate item-avatar">
-          	<img ng-src="img/justice.png">
+            <ion-item ng-repeat="item in data1 | currentDates:selectedDate" item="item" href="#/app/detail/{{item.id}}" class="item-remove-animate item-avatar">
+            <img ng-src="img/justice.png">
               <h2>{{item.first_party_name}} vs {{item.second_party_name}}</h2>
     	      <p>Court Name : {{item.court_name}}</p>
               <p>Court Stage : {{item.case_stage}}</p>
-              <ion-option-button class="utton button-block button-balanced ion-edit "
-                                 ng-click="update(item.id)">
- Update
-              </ion-option-button> 
-              <ion-option-button class="button button-block button-royal ion-eye" ng-click="view(item.id)">View
-              </ion-option-button>               
+               <ion-option-button style="font-size:30px" class="button button-blck button-assertive ion-trash-b" ng-click="delete(item.id)"></ion-option-button> 
+              <ion-option-button style="font-size:30px" class="button button-blck button-balanced ion-edit "
+                                 ng-click="update(item.id)"></ion-option-button> 
+              <ion-option-button  style="font-size:30px" class="button button-blck button-royal ion-eye" ng-click="view(item.id)"></ion-option-button> 
+
             </ion-item>
+
     </ion-list>
   </div>
+</div>
+<div class="tabs tabs-icon-left">
+  <a class="tab-item button" ng-click="prev()">
+    <i class="icon ion-arrow-left-c"></i>
+    
+  </a>
+  <a class="tab-item" ng-click="openDatePicker1()" style="font-weight:bold; font-size:15px">
+    {{selectedDate | date}}
+  </a>
+  <a class="tab-item button" ng-click="next()">
+    <i class="icon ion-arrow-right-c"></i>    
+  </a>
 </div>

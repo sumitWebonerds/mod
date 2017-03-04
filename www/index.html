@@ -17,6 +17,8 @@
     </script>-->
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="lib/ionic-calendar/dist/css/calendar.min.css"/>
     <link href="css/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -27,8 +29,9 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
@@ -46,6 +49,7 @@
     <script type="text/javascript" src="js/components/casenotedetail/detailComponent.js"></script>
     <script type="text/javascript" src="js/components/createcasenote/createcasenoteComponent.js"></script>
     <!-- Services  -->
+    <script type="text/javascript" src="js/service.js"></script>
     <script type="text/javascript" src="js/services/signupService.js"></script>
     <script type="text/javascript" src="js/services/loginService.js"></script>
     <script type="text/javascript" src="js/services/forgotPasswordService.js"></script>
@@ -54,11 +58,19 @@
     <script type="text/javascript" src="js/services/casenotedetailService.js"></script>
     <script type="text/javascript" src="js/services/editCasenoteService.js"></script>
     <script type="text/javascript" src="js/services/createcasenoteService.js"></script>
+    <script type="text/javascript" src="js/services/networkService.js"></script>
+    <script type="text/javascript" src="js/services/insertToLocalService.js"></script>
+        <script type="text/javascript" src="js/services/updateRemoteService.js"></script>
 
     <!-- plugins -->
-
+    <script src="lib/ionic-calendar/dist/js/calendar-tpls.min.js"></script>
     <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
-    
+    <script src="lib/onezone-datepicker/dist/onezone-datepicker.min.js"></script>
+  <!--   <script src="bower_components/onezone-datepicker/dist/onezone-datepicker.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="../bower_components/ionic-filter-bar/dist/ionic.filter.bar.css">
+    <script src="../bower_components/ionic-filter-bar/dist/ionic.filter.bar.js"></script>
+     -->
+     
     <!-- plugins -->
         
   </head>

@@ -57,5 +57,15 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+})
 
+app.controller('MainCtrl', function($scope, $cordovaPrinter,$cordovaGeolocation,$cordovaSQLite) {
+    
+     var doc = "<html> <h1>Hiii </h1></html>";
+      
+     $scope.printData=function(){
+     
+            $cordovaPrinter.print(doc,'list.html') ;     
+     }
+      
+}); 

@@ -44,3 +44,13 @@ td,th{
     color:#0c60ee;
     text-decoration: none;
 }
+.ion-ios-plus-empty{
+    font-size: 30px;
+    color: white;
+}
+button.button-blck{
+    margin-bottom: 10px;
+}
+.ion-eye ,.ion-edit{
+    font-size: 30px
+}
